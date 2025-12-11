@@ -161,6 +161,9 @@ Finally, we will also be adding support to various Redis client libraries starti
 We are immensely excited to see what the developer community will build using vector sets. We look forward to your feedback and innovations, as we continue to evolve Redis to meet the ever-changing needs of the tech landscape. We also encourage you to share your feedback through our GitHub issues or community forums. Have a fun time building.
 
 
+#### II. [Docs](./VSETS-README.md) from Vector Set Browser 
+
+
 #### Biblipgraphy 
 1. [A First Look at Vector Sets](https://medium.com/the-guy-wire/a-first-look-at-vector-sets-dd91cb59123e)
 2. [Getting started with vector sets](https://redis.io/learn/howtos/vector-sets-basics)
