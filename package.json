@@ -1,0 +1,25 @@
+{
+  "name": "redis-vector-set",
+  "version": "1.0.0",
+  "description": "![alt vector-radial](img/vector-radial.png)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Albert0i/Redis-Vector-Set.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Albert0i/Redis-Vector-Set/issues"
+  },
+  "homepage": "https://github.com/Albert0i/Redis-Vector-Set#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "redis": "^5.10.0"
+  }
+}
