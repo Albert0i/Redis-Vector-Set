@@ -1,0 +1,40 @@
+VADD cities VALUES 2 121.5654 25.0330 "Taipei" SETATTR "{ \"city_en\": \"Taipei\", \"city_zh\": \"台北市\", \"longitude\": 121.5654, \"latitude\": 25.0330, \"description\": \"The capital of Taiwan, a cultural and political hub known for Taipei 101 and vibrant night markets.\", \"population\": 2779200, \"area_m2\": 271800000 }"
+
+VADD cities VALUES 2 121.4628 25.0160 "New-Taipei" SETATTR "{ \"city_en\": \"New-Taipei\", \"city_zh\": \"新北市\", \"longitude\": 121.4628, \"latitude\": 25.0160, \"description\": \"Taiwan’s most populous municipality surrounding Taipei, with diverse districts and scenic mountains.\", \"population\": 4563850, \"area_m2\": 2052000000 }"
+
+VADD cities VALUES 2 121.2969 24.9936 "Taoyuan" SETATTR "{ \"city_en\": \"Taoyuan\", \"city_zh\": \"桃園市\", \"longitude\": 121.2969, \"latitude\": 24.9936, \"description\": \"An industrial and tech hub, home to Taiwan’s main international airport and growing urban centers.\", \"population\": 2356610, \"area_m2\": 1220954000 }"
+
+VADD cities VALUES 2 120.6736 24.1477 "Taichung" SETATTR "{ \"city_en\": \"Taichung\", \"city_zh\": \"台中市\", \"longitude\": 120.6736, \"latitude\": 24.1477, \"description\": \"A central city famous for its cultural institutions, night markets, and gateway to Sun Moon Lake.\", \"population\": 1040725, \"area_m2\": 2215000000 }"
+
+VADD cities VALUES 2 120.2000 23.0000 "Tainan" SETATTR "{ \"city_en\": \"Tainan\", \"city_zh\": \"台南市\", \"longitude\": 120.2000, \"latitude\": 23.0000, \"description\": \"Taiwan’s oldest city, rich in temples and history, often called the cultural capital of Taiwan.\", \"population\": 880865, \"area_m2\": 2191000000 }"
+
+VADD cities VALUES 2 120.3014 22.6273 "Kaohsiung" SETATTR "{ \"city_en\": \"Kaohsiung\", \"city_zh\": \"高雄市\", \"longitude\": 120.3014, \"latitude\": 22.6273, \"description\": \"A major port city in southern Taiwan, known for its harbor, arts scene, and Love River.\", \"population\": 1519711, \"area_m2\": 2952000000 }"
+
+VADD cities VALUES 2 121.7419 25.1283 "Keelung" SETATTR "{ \"city_en\": \"Keelung\", \"city_zh\": \"基隆市\", \"longitude\": 121.7419, \"latitude\": 25.1283, \"description\": \"A northern port city near Taipei, famous for seafood markets and coastal scenery.\", \"population\": 397515, \"area_m2\": 132760000 }"
+
+VADD cities VALUES 2 120.9675 24.8138 "Hsinchu" SETATTR "{ \"city_en\": \"Hsinchu\", \"city_zh\": \"新竹市\", \"longitude\": 120.9675, \"latitude\": 24.8138, \"description\": \"Known as Taiwan’s Silicon Valley, hosting the Hsinchu Science Park and major semiconductor companies.\", \"population\": 436220, \"area_m2\": 104600000 }"
+
+VADD cities VALUES 2 120.4491 23.4801 "Chiayi" SETATTR "{ \"city_en\": \"Chiayi\", \"city_zh\": \"嘉義市\", \"longitude\": 120.4491, \"latitude\": 23.4801, \"description\": \"Gateway to Alishan mountain range, known for tea plantations and scenic railways.\", \"population\": 263188, \"area_m2\": 60030000 }"
+
+VADD cities VALUES 2 120.5430 24.0730 "Changhua" SETATTR "{ \"city_en\": \"Changhua\", \"city_zh\": \"彰化市\", \"longitude\": 120.5430, \"latitude\": 24.0730, \"description\": \"Seat of Changhua County, known for traditional culture and agriculture.\", \"population\": 226564, \"area_m2\": 65680000 }"
+
+VADD cities VALUES 2 120.5420 23.7094 "Douliu" SETATTR "{ \"city_en\": \"Douliu\", \"city_zh\": \"斗六市\", \"longitude\": 120.5420, \"latitude\": 23.7094, \"description\": \"Seat of Yunlin County, known for agriculture and traditional Taiwanese culture.\", \"population\": 107924, \"area_m2\": 93715100 }"
+
+VADD cities VALUES 2 121.6016 23.9872 "Hualien" SETATTR "{ \"city_en\": \"Hualien\", \"city_zh\": \"花蓮市\", \"longitude\": 121.6016, \"latitude\": 23.9872, \"description\": \"Eastern coastal city, base for exploring Taroko Gorge and indigenous culture.\", \"population\": 318736, \"area_m2\": 4628571400 }"
+
+VADD cities VALUES 2 119.5860 23.5654 "Magong" SETATTR "{ \"city_en\": \"Magong\", \"city_zh\": \"馬公市\", \"longitude\": 119.5860, \"latitude\": 23.5654, \"description\": \"Main city of the Penghu Islands, noted for fishing, temples, and island tourism.\", \"population\": 53000, \"area_m2\": 33991800 }"
+
+VADD cities VALUES 2 120.8210 24.5602 "Miaoli" SETATTR "{ \"city_en\": \"Miaoli\", \"city_zh\": \"苗栗市\", \"longitude\": 120.8210, \"latitude\": 24.5602, \"description\": \"Seat of Miaoli County, blending Hakka culture with mountainous landscapes.\", \"population\": 535011, \"area_m2\": 1820314900 }"
+
+VADD cities VALUES 2 120.6844 23.9150 "Nantou" SETATTR "{ \"city_en\": \"Nantou\", \"city_zh\": \"南投市\", \"longitude\": 120.6844, \"latitude\": 23.9150, \"description\": \"Central inland city, gateway to Sun Moon Lake and mountainous landscapes.\", \"population\": 479666, \"area_m2\": 4106436000 }"
+
+VADD cities VALUES 2 120.4940 22.6761 "Pingtung" SETATTR "{ \"city_en\": \"Pingtung\", \"city_zh\": \"屏東市\", \"longitude\": 120.4940, \"latitude\": 22.6761, \"description\": \"Southern city near Kenting National Park, known for tropical climate and beaches.\", \"population\": 793959, \"area_m2\": 2775600300 }"
+
+VADD cities VALUES 2 120.2470 23.4650 "Puzi" SETATTR "{ \"city_en\": \"Puzi\", \"city_zh\": \"朴子市\", \"longitude\": 120.2470, \"latitude\": 23.4650, \"description\": \"County-administered city in Chiayi County, known for traditional temples.\", \"population\": 41043, \"area_m2\": 50000000 }"
+
+VADD cities VALUES 2 120.8980 24.6880 "Toufen" SETATTR "{ \"city_en\": \"Toufen\", \"city_zh\": \"頭份市\", \"longitude\": 120.8980, \"latitude\": 24.6880, \"description\": \"A city in Miaoli County, blending traditional industries with modern development.\", \"population\": 106310, \"area_m2\": 53320500 }"
+
+VADD cities VALUES 2 121.7530 24.7570 "Yilan" SETATTR "{ \"city_en\": \"Yilan\", \"city_zh\": \"宜蘭市\", \"longitude\": 121.7530, \"latitude\": 24.7570, \"description\": \"A northeastern city famous for hot springs, traditional festivals, and coastal landscapes.\", \"population\": 94188, \"area_m2\": 2143625100 }"
+
+VADD cities VALUES 2 121.0050 24.8330 "Zhubei" SETATTR "{ \"city_en\": \"Zhubei\", \"city_zh\": \"竹北市\", \"longitude\": 121.0050, \"latitude\": 24.8330, \"description\": \"Rapidly growing city in Hsinchu County, closely tied to the tech industry.\", \"population\": 212695, \"area_m2\": 46830000 }"
+

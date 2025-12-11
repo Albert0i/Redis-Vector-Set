@@ -1,0 +1,191 @@
+[
+  {
+    "city_en": "Taipei",
+    "city_zh": "台北市",
+    "latitude": 25.0330,
+    "longitude": 121.5654,
+    "description": "The capital of Taiwan, a cultural and political hub known for Taipei 101 and vibrant night markets.",
+    "population": 2779200,
+    "area_m2": 271800000
+  },
+  {
+    "city_en": "New-Taipei",
+    "city_zh": "新北市",
+    "latitude": 25.0160,
+    "longitude": 121.4628,
+    "description": "Taiwan’s most populous municipality surrounding Taipei, with diverse districts and scenic mountains.",
+    "population": 4563850,
+    "area_m2": 2052000000
+  },
+  {
+    "city_en": "Taoyuan",
+    "city_zh": "桃園市",
+    "latitude": 24.9936,
+    "longitude": 121.2969,
+    "description": "An industrial and tech hub, home to Taiwan’s main international airport and growing urban centers.",
+    "population": 2356610,
+    "area_m2": 1220954000
+  },
+  {
+    "city_en": "Taichung",
+    "city_zh": "台中市",
+    "latitude": 24.1477,
+    "longitude": 120.6736,
+    "description": "A central city famous for its cultural institutions, night markets, and gateway to Sun Moon Lake.",
+    "population": 1040725,
+    "area_m2": 2215000000
+  },
+  {
+    "city_en": "Tainan",
+    "city_zh": "台南市",
+    "latitude": 23.0000,
+    "longitude": 120.2000,
+    "description": "Taiwan’s oldest city, rich in temples and history, often called the cultural capital of Taiwan.",
+    "population": 880865,
+    "area_m2": 2191000000
+  },
+  {
+    "city_en": "Kaohsiung",
+    "city_zh": "高雄市",
+    "latitude": 22.6273,
+    "longitude": 120.3014,
+    "description": "A major port city in southern Taiwan, known for its harbor, arts scene, and Love River.",
+    "population": 1519711,
+    "area_m2": 2952000000
+  },
+  {
+    "city_en": "Keelung",
+    "city_zh": "基隆市",
+    "latitude": 25.1283,
+    "longitude": 121.7419,
+    "description": "A northern port city near Taipei, famous for seafood markets and coastal scenery.",
+    "population": 397515,
+    "area_m2": 132760000
+  },
+  {
+    "city_en": "Hsinchu",
+    "city_zh": "新竹市",
+    "latitude": 24.8138,
+    "longitude": 120.9675,
+    "description": "Known as Taiwan’s Silicon Valley, hosting the Hsinchu Science Park and major semiconductor companies.",
+    "population": 436220,
+    "area_m2": 104600000
+  },
+  {
+    "city_en": "Chiayi",
+    "city_zh": "嘉義市",
+    "latitude": 23.4801,
+    "longitude": 120.4491,
+    "description": "Gateway to Alishan mountain range, known for tea plantations and scenic railways.",
+    "population": 263188,
+    "area_m2": 60030000
+  },
+  {
+    "city_en": "Changhua",
+    "city_zh": "彰化市",
+    "latitude": 24.0730,
+    "longitude": 120.5430,
+    "description": "Seat of Changhua County, known for traditional culture and agriculture.",
+    "population": 226564,
+    "area_m2": 65680000
+  },
+  {
+    "city_en": "Douliu",
+    "city_zh": "斗六市",
+    "latitude": 23.7094,
+    "longitude": 120.5420,
+    "description": "Seat of Yunlin County, known for agriculture and traditional Taiwanese culture.",
+    "population": 107924,
+    "area_m2": 93715100
+  },
+  {
+    "city_en": "Hualien",
+    "city_zh": "花蓮市",
+    "latitude": 23.9872,
+    "longitude": 121.6016,
+    "description": "Eastern coastal city, base for exploring Taroko Gorge and indigenous culture.",
+    "population": 318736,
+    "area_m2": 4628571400
+  },
+  {
+    "city_en": "Magong",
+    "city_zh": "馬公市",
+    "latitude": 23.5654,
+    "longitude": 119.5860,
+    "description": "Main city of the Penghu Islands, noted for fishing, temples, and island tourism.",
+    "population": 53000,
+    "area_m2": 33991800
+  },
+  {
+    "city_en": "Miaoli",
+    "city_zh": "苗栗市",
+    "latitude": 24.5602,
+    "longitude": 120.8210,
+    "description": "Seat of Miaoli County, blending Hakka culture with mountainous landscapes.",
+    "population": 535011,
+    "area_m2": 1820314900
+  },
+  {
+    "city_en": "Nantou",
+    "city_zh": "南投市",
+    "latitude": 23.9150,
+    "longitude": 120.6844,
+    "description": "Central inland city, gateway to Sun Moon Lake and mountainous landscapes.",
+    "population": 479666,
+    "area_m2": 4106436000
+  },
+  {
+    "city_en": "Pingtung",
+    "city_zh": "屏東市",
+    "latitude": 22.6761,
+    "longitude": 120.4940,
+    "description": "Southern city near Kenting National Park, known for tropical climate and beaches.",
+    "population": 793959,
+    "area_m2": 2775600300
+  },
+  {
+    "city_en": "Puzi",
+    "city_zh": "朴子市",
+    "latitude": 23.4650,
+    "longitude": 120.2470,
+    "description": "County-administered city in Chiayi County, known for traditional temples.",
+    "population": 41043,
+    "area_m2": 50000000
+  },
+  {
+    "city_en": "Toufen",
+    "city_zh": "頭份市",
+    "latitude": 24.6880,
+    "longitude": 120.8980,
+    "description": "A city in Miaoli County, blending traditional industries with modern development.",
+    "population": 106310,
+    "area_m2": 53320500
+  },
+  {
+    "city_en": "Yilan",
+    "city_zh": "宜蘭市",
+    "latitude": 24.7570,
+    "longitude": 121.7530,
+    "description": "A northeastern city famous for hot springs, traditional festivals, and coastal landscapes.",
+    "population": 94188,
+    "area_m2": 2143625100
+  },
+  {
+    "city_en": "Zhubei",
+    "city_zh": "竹北市",
+    "latitude": 24.8330,
+    "longitude": 121.0050,
+    "description": "Rapidly growing city in Hsinchu County, closely tied to the tech industry.",
+    "population": 212695,
+    "area_m2": 46830000
+  },
+  {
+    "city_en": "Taitung",
+    "city_zh": "台東市",
+    "latitude": 22.7583,
+    "longitude": 121.1444,
+    "description": "A laid-back city on Taiwan’s southeast coast, known for indigenous heritage and natural beauty.",
+    "population": 103260,
+    "area_m2": 109769100
+  }
+]

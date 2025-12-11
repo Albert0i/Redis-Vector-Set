@@ -1,0 +1,58 @@
+
+VADD points VALUES 2 1.0 1.0 pt:A
+VADD points VALUES 2 -1.0 -1.0 pt:B
+VADD points VALUES 2 -1.0 1.0 pt:C
+VADD points VALUES 2 1.0 -1.0 pt:D
+VADD points VALUES 2 1.0 0 pt:E
+
+
+TYPE points
+VCARD points
+VDIM points
+
+
+VEMB points pt:A
+VEMB points pt:B
+VEMB points pt:C
+VEMB points pt:D
+VEMB points pt:E
+
+
+VSETATTR points pt:A "{\"name\": \"Point A\", \"description\": \"First point added\"}" 
+VGETATTR points pt:A
+
+
+VSETATTR points pt:A "" 
+VGETATTR points pt:A
+
+
+VADD points VALUES 2 0 0 pt:F
+VCARD points
+VREM points pt:F
+VCARD points
+
+
+VSIM points values 2 0.9 0.1
+
+
+VSIM points ELE pt:A WITHSCORES COUNT 4
+
+
+VSETATTR points pt:A "{\"size\":\"large\",\"price\": 18.99}"
+VSETATTR points pt:B "{\"size\":\"large\",\"price\": 35.99}"
+VSETATTR points pt:C "{\"size\":\"large\",\"price\": 25.99}"
+VSETATTR points pt:D "{\"size\":\"small\",\"price\": 21.00}"
+VSETATTR points pt:E "{\"size\":\"small\",\"price\": 17.75}"
+
+VSIM points ELE pt:A FILTER '.size == "large"'
+
+VSIM points ELE pt:A FILTER '.size == "large" && .price > 20.00'
+
+
+VADD points VALUES 2 5 10 pt:G SETATTR "{\"size\":\"extra small\",\"price\": 13.21}"
+VSIM points ELE pt:G WITHSCORES COUNT 3
+VSIM points ELE pt:G FILTER '.size == "large"' WITHSCORES COUNT 3
+
+VSIM points values 2 5 9 WITHSCORES COUNT 3
+VSIM points values 2 5 9 FILTER '.size == "large"' WITHSCORES COUNT 3
+

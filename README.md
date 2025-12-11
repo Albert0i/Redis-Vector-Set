@@ -1,4 +1,6 @@
-### [Redis-Vector-Set](https://redis.io/blog/announcing-vector-sets-a-new-redis-data-type-for-vector-similarity/)
+### [Redis-Vector-Set](https://redis.io/docs/latest/develop/data-types/vector-sets/)
+
+![alt vector-radial](img/vector-radial.png)
 
 ####
 
