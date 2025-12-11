@@ -29,7 +29,7 @@ Inspired by the core principles of Redis and developed by the original creator o
 
 Salvatore Sanfilippo (aka ‘antirez’), the creator of Redis, recently rejoined the company and is the creator of this innovative data type; his expertise has led to the creation of an API that is both simple and intuitive, reflecting Redis’s philosophy of delivering high-performance solutions with minimal complexity.
 
-**What are vector sets?**
+##### **What are vector sets?**
 Vector sets take inspiration from sorted sets, one of Redis’s fundamental data types known for its efficiency in handling ordered collections. Vector sets extend this concept by allowing the storage and querying of high-dimensional vector embeddings, which are crucial for various AI and machine learning applications. Like a sorted set, a vector set has string elements that are associated with a vector instead of a score. The fundamental goal of vector sets is to make it possible to add items, and later get a subset of the added items that are the most similar to a specified vector.
 
 Consider a scenario where you want to store and retrieve vector embeddings for various text descriptions or images. With vector sets, you can easily store these embeddings and perform efficient similarity searches. vector sets also implements some exciting additional capabilities including:
@@ -108,7 +108,7 @@ The filter expression (like `population > 1000000 AND area_m2 < 500000000`) is a
 
 ---
 
-**Vector set commands**
+##### **Vector set commands**
 
 Below are some examples of commands you can use with a vector set. For a full list, see our documentation [here](https://redis.io/docs/latest/commands/?group=vector_set).
 
@@ -136,7 +136,7 @@ VCARD myset
 VINFO myset
 ```
 
-**Redis Query Engine and vector sets**
+##### **Redis Query Engine and vector sets**
 
 Redis now offers two complementary search capabilities—the Redis Query Engine for comprehensive, enterprise-grade search & querying, and the new vector set as a native data-type that is lightweight and specialized vector similarity search.
 
@@ -152,7 +152,7 @@ Meanwhile, Redis Query Engine, which is included in [Redis 8](https://redis.io/b
 
 • **GenAI ecosystem**: Strong ecosystem support including integrations with popular frameworks such as Langchain (and LangGraph), and LllamaIndex, as well as our dedicated python library for GenAI apps (RedisVL).
 
-**Getting started with vector sets**
+##### **Getting started with vector sets**
 
 Getting started with vector sets is straightforward. Simply deploy the latest version of Redis to get started. For comprehensive instructions on storing and querying vectors, configuration options, and best practices, visit [our documentation here](https://redis.io/docs/latest/develop/data-types/vector-sets/).
 
