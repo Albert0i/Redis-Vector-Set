@@ -1,3 +1,5 @@
+## [Redis Vector Set](https://redis.io/docs/latest/develop/data-types/vector-sets/)
+
 This module implements Vector Sets for Redis, a new Redis data type similar
 to Sorted Sets but having string elements associated to a vector instead of
 a score. The fundamental goal of Vector Sets is to make possible adding items,
