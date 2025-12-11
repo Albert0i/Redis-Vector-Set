@@ -142,17 +142,23 @@ Redis now offers two complementary search capabilities—the Redis Query Engine 
 
 Redis Query Engine excels at fast full-text, numerical, vector, and hybrid queries over large scalable datasets, while vector sets provide a streamlined alternative with a simple API. Together, they reinforce Redis’s commitment to performance, flexibility, and developer-friendly search solutions.
 
-Vector sets may be a great choice when your application primarily focuses on vector similarity use-cases without the need for advanced search and querying, particularly those involving full-text, or hybrid queries. If you’re building AI-driven applications and want a lightweight, efficient way to store and query high-dimensional embeddings, vector sets can offer a simple, streamlined alternative.
+Vector sets may be a great choice when your application **primarily focuses on vector similarity use-cases** without the need for advanced search and querying, particularly those involving full-text, or hybrid queries. If you’re building **AI-driven applications** and want a **lightweight, efficient** way to store and query high-dimensional embeddings, vector sets can offer a **simple, streamlined** alternative.
 
-Meanwhile, Redis Query Engine, which is included in Redis 8 is the fastest search and vector database on the market delivering enterprise-grade solutions for a number of scenarios including:
+Meanwhile, Redis Query Engine, which is included in [Redis 8](https://redis.io/blog/introducing-another-era-of-fast/) is the fastest search and vector database on the market delivering enterprise-grade solutions for a number of scenarios including:
 
-• Comprehensive search and querying: Support for diverse query types enables powerful combinations of vector similarity, full-text search, numerical filtering, and geospatial operations. RQE also seamlessly indexes Redis data-structures such as Hash and JSON for flexible and adjustable query needs.
+• **Comprehensive search and querying**: Support for diverse query types enables powerful combinations of vector similarity, full-text search, numerical filtering, and geospatial operations. RQE also seamlessly indexes Redis data-structures such as Hash and JSON for flexible and adjustable query needs.
 
-• Scalability: Redis Query Engine offers a horizontally scalable solution (with automatic sharding and management of the distributed architecture) to support large datasets. In addition, it offers multi–threaded search to deliver strong throughput, low latency and fast indexing that makes Redis the fastest vector database solution on the market.
+• **Scalability**: Redis Query Engine offers a horizontally scalable solution (with automatic sharding and management of the distributed architecture) to support large datasets. In addition, it offers multi–threaded search to deliver strong throughput, low latency and fast indexing that makes Redis the fastest vector database solution on the market.
 
-• GenAI ecosystem: Strong ecosystem support including integrations with popular frameworks such as Langchain (and LangGraph), and LllamaIndex, as well as our dedicated python library for GenAI apps (RedisVL).
+• **GenAI ecosystem**: Strong ecosystem support including integrations with popular frameworks such as Langchain (and LangGraph), and LllamaIndex, as well as our dedicated python library for GenAI apps (RedisVL).
 
+**Getting started with vector sets**
 
+Getting started with vector sets is straightforward. Simply deploy the latest version of Redis to get started. For comprehensive instructions on storing and querying vectors, configuration options, and best practices, visit [our documentation here](https://redis.io/docs/latest/develop/data-types/vector-sets/).
+
+Finally, we will also be adding support to various Redis client libraries starting with support in redis-py.
+
+We are immensely excited to see what the developer community will build using vector sets. We look forward to your feedback and innovations, as we continue to evolve Redis to meet the ever-changing needs of the tech landscape. We also encourage you to share your feedback through our GitHub issues or community forums. Have a fun time building.
 
 
 #### Biblipgraphy 
