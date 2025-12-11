@@ -3,9 +3,6 @@
 ![alt vector-radial](img/vector-radial.png)
 
 
-#### Prologue 
-
-
 #### Caveat
 Vector Set is a new feature added in Redis 8.0. Be sure to check  the availability before jumping into it. 
 
@@ -26,7 +23,7 @@ module:name=vectorset,ver=1,api=1,filters=0,usedby=[],using=[],options=[handle-i
 > 
 ```
 
-#### [Announcing vector sets, a new Redis data type for vector similarity](https://redis.io/blog/announcing-vector-sets-a-new-redis-data-type-for-vector-similarity/)
+#### I. [Announcing vector sets, a new Redis data type for vector similarity](https://redis.io/blog/announcing-vector-sets-a-new-redis-data-type-for-vector-similarity/) (TL;DR)
 
 Inspired by the core principles of Redis and developed by the original creator of Redis, Salvatore Sanfilippo, vector sets enhance Redis’s capabilities as a versatile solution for modern AI applications. Vector sets complement the existing powerful vector search in Redis (Redis Query Engine) by offering a Redis-friendly alternative for specific use-cases. 
 
@@ -110,6 +107,52 @@ VSIM cities KNN 5 "industrial hub" FILTER population > 1000000
 The filter expression (like `population > 1000000 AND area_m2 < 500000000`) is applied to the attributes. Only vectors that satisfy the expression are considered in the similarity search.
 
 ---
+
+**Vector set commands**
+
+Below are some examples of commands you can use with a vector set. For a full list, see our documentation [here](https://redis.io/docs/latest/commands/?group=vector_set).
+
+```
+# Add keys to the vector set 
+VADD myset VALUES 4 0.5 1.2 0.75 3.8 element1  
+VADD myset VALUES 4 0.9 1.5 0.66 4.5 element2  
+VADD myset VALUES 4 0.4 1.9 0.92 3.6 element3  
+VADD myset VALUES 4 0.7 1.3 0.85 4.1 element4  
+
+# Retrieve the top 3 most similar keys to a given query vector with similarity scores
+VSIM myset ELE element4 WITHSCORES COUNT 3
+
+# Remove a key from the set
+VREM myset element1
+
+
+
+# Count the number of elements in the vector set
+VCARD myset
+
+
+# Show info about a vector set including stored elements, vector dimensions, quantization etc. 
+
+VINFO myset
+```
+
+**Redis Query Engine and vector sets**
+
+Redis now offers two complementary search capabilities—the Redis Query Engine for comprehensive, enterprise-grade search & querying, and the new vector set as a native data-type that is lightweight and specialized vector similarity search.
+
+Redis Query Engine excels at fast full-text, numerical, vector, and hybrid queries over large scalable datasets, while vector sets provide a streamlined alternative with a simple API. Together, they reinforce Redis’s commitment to performance, flexibility, and developer-friendly search solutions.
+
+Vector sets may be a great choice when your application primarily focuses on vector similarity use-cases without the need for advanced search and querying, particularly those involving full-text, or hybrid queries. If you’re building AI-driven applications and want a lightweight, efficient way to store and query high-dimensional embeddings, vector sets can offer a simple, streamlined alternative.
+
+Meanwhile, Redis Query Engine, which is included in Redis 8 is the fastest search and vector database on the market delivering enterprise-grade solutions for a number of scenarios including:
+
+• Comprehensive search and querying: Support for diverse query types enables powerful combinations of vector similarity, full-text search, numerical filtering, and geospatial operations. RQE also seamlessly indexes Redis data-structures such as Hash and JSON for flexible and adjustable query needs.
+
+• Scalability: Redis Query Engine offers a horizontally scalable solution (with automatic sharding and management of the distributed architecture) to support large datasets. In addition, it offers multi–threaded search to deliver strong throughput, low latency and fast indexing that makes Redis the fastest vector database solution on the market.
+
+• GenAI ecosystem: Strong ecosystem support including integrations with popular frameworks such as Langchain (and LangGraph), and LllamaIndex, as well as our dedicated python library for GenAI apps (RedisVL).
+
+
 
 
 #### Biblipgraphy 
