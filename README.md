@@ -219,6 +219,7 @@ VSIM key (ELE | FP32 | VALUES num) (vector | element)
 
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
 ![alt vector set](img/vector-set-browser-1.JPG)
+> A modern web-based visualization and interaction tool for Redis Vector Sets. This application provides an intuitive interface for exploring and analyzing vector embeddings stored in Redis vector-sets.
 
 [Docs](./VSETS-README.md)
 
