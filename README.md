@@ -59,7 +59,7 @@ Consider a scenario where you want to store and retrieve vector embeddings for v
 
 • **Dimensionality Reduction**: This means shrinking the vector from, say, 768 dimensions down to 128 or 256. You’re compressing the information into fewer numbers.
 
-• **Random Projection**: One way to reduce dimensions is to project the high‑dimensional vector into a lower‑dimensional space using a random matrix.
+• **Random Projection**: One way to reduce dimensions is to project the high‑dimensional vector into a lower‑dimensional space using a *random matrix*.
 
 •• Imagine shining a light on a 3D object to cast a 2D shadow. You lose some detail, but the shadow still preserves the overall shape.
 
