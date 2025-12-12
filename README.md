@@ -129,25 +129,39 @@ Below are some examples of commands you can use with a vector set. For a full li
 
 ```
 # Add keys to the vector set 
-VADD myset VALUES 4 0.5 1.2 0.75 3.8 element1  
-VADD myset VALUES 4 0.9 1.5 0.66 4.5 element2  
-VADD myset VALUES 4 0.4 1.9 0.92 3.6 element3  
-VADD myset VALUES 4 0.7 1.3 0.85 4.1 element4  
+VADD myset REDUCE 3 VALUES 4 0.5 1.2 0.75 3.8 element1 Q8 EF 200 SETATTR "{ \"element\": 1 }" M 16 
+VADD myset REDUCE 3 VALUES 4 0.9 1.5 0.66 4.5 element2 SETATTR "{ \"element\": 2 }"
+VADD myset REDUCE 3 VALUES 4 0.4 1.9 0.92 3.6 element3 SETATTR "{ \"element\": 3 }"
+VADD myset REDUCE 3 VALUES 4 0.7 1.3 0.85 4.1 element4 SETATTR "{ \"element\": 4 }"
+
+# Number of dimensions of the vectors in vector set.
+VDIM myset 
+
+# VADD myset VALUES 3 1.3 0.85 4.1 element5
+# "ERR Vector dimension mismatch - got 3 but set has 3"
 
 # Retrieve the top 3 most similar keys to a given query vector with similarity scores
 VSIM myset ELE element4 WITHSCORES COUNT 3
 
+# More options
+> VSIM myset ELE element4 WITHSCORES WITHATTRIBS COUNT 3 EPSILON 0.2 EF 100 FILTER '.element >=1 and .element <=3' TRUTH NOTHREAD
+1) "element1"
+2) "0.9994525909423828"
+3) "{ \"element\": 1 }"
+4) "element2"
+5) "0.9993630647659302"
+6) "{ \"element\": 2 }"
+7) "element3"
+8) "0.9975350797176361"
+9) "{ \"element\": 3 }"
+
 # Remove a key from the set
-VREM myset element1
-
-
+VREM myset element5
 
 # Count the number of elements in the vector set
 VCARD myset
 
-
 # Show info about a vector set including stored elements, vector dimensions, quantization etc. 
-
 VINFO myset
 ```
 
