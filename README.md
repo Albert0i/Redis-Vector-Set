@@ -163,15 +163,25 @@ We are immensely excited to see what the developer community will build using ve
 
 #### II. [VADD](https://redis.io/docs/latest/commands/vadd/)
 ```
-VADD key [REDUCE dim] (FP32 | VALUES num) vector element [CAS] [NOQUANT | Q8 | BIN]
-  [EF build-exploration-factor] [SETATTR attributes] [M numlinks]
+VADD key [REDUCE dim] (FP32 | VALUES num) vector element 
+     [CAS] 
+     [NOQUANT | Q8 | BIN]
+     [EF build-exploration-factor] 
+     [SETATTR attributes] 
+     [M numlinks]
 ```
 
 #### III. [VSIM](https://redis.io/docs/latest/commands/vsim/)
 ```
-VSIM key (ELE | FP32 | VALUES num) (vector | element) [WITHSCORES] [WITHATTRIBS] [COUNT num]
-  [EPSILON delta] [EF search-exploration-factor] [FILTER expression] [FILTER-EF max-filtering-effort]
-  [TRUTH] [NOTHREAD]
+VSIM key (ELE | FP32 | VALUES num) (vector | element) 
+     [WITHSCORES] 
+     [WITHATTRIBS] 
+     [COUNT num]     
+     [EPSILON delta] 
+     [EF search-exploration-factor] 
+     [FILTER expression] 
+     [FILTER-EF max-filtering-effort]     
+     [TRUTH] [NOTHREAD]
 ```
 
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
