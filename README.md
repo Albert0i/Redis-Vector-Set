@@ -3,8 +3,8 @@
 ![alt vector-radial](img/vector-radial.png)
 
 
-#### Caveat
-Vector Set is a new feature added in Redis 8.0. Be sure to check  the availability before jumping into it. 
+#### CAVEAT
+Vector Set is a new feature introduced in Redis 8.0. Be sure to check the availability before jumping into it. 
 
 ```
 > INFO MODULES
@@ -20,7 +20,6 @@ module:name=vectorset,ver=1,api=1,filters=0,usedby=[],using=[],options=[handle-i
    6) ""
    7) "args"
    8) (empty list or set)
-> 
 ```
 
 #### I. [Announcing vector sets, a new Redis data type for vector similarity](https://redis.io/blog/announcing-vector-sets-a-new-redis-data-type-for-vector-similarity/) (TL;DR)
