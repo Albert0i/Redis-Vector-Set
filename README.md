@@ -73,7 +73,7 @@ Consider a scenario where you want to store and retrieve vector embeddings for v
 
 ---
 
-- **Filtering**: Each element of the vector set can be associated with a set of attributes specified as a JSON blob via the VADD or VSETATTR command. This allows the ability to filter for a subset of elements using VSIM that are verified by the expression.
+- **Filtering**: Each element of the vector set can be associated with a set of attributes specified as a JSON blob via the `VADD` or `VSETATTR` command. This allows the ability to filter for a subset of elements using `VSIM` that are verified by the expression.
 ---
 **Supplement**
 
