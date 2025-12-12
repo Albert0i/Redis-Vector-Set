@@ -83,9 +83,10 @@ Every vector you add (e.g., an embedding for “Taipei”) isn’t just numbers 
 • **Associated with a set of attributes**:
 These extra fields are stored as a **JSON blob**. For example:
 ```
-VADD cities VALUES 1 121.5654 25.0330 "Taipei" SETATTR "{ \"population\": 2779200, \"area_m2\": 271800000, \"description\": \"Capital city\" }"
+VADD cities VALUES 2 121.5654 25.0330 "Taipei" SETATTR "{ \"city_en\": \"Taipei\", \"city_zh\": \"台北市\", \"longitude\": 121.5654, \"latitude\": 25.0330, \"description\": \"The capital of Taiwan, a cultural and political hub known for Taipei 101 and vibrant night markets.\", \"population\": 2779200, \"area_m2\": 271800000 }"
 ```
-• Here, the vector for Taipei has attributes: population, area, description.
+
+• Here, the vector for Taipei has attributes: population, area_m2, description.
 
 • **Via VADD or VSETATTR**
 
@@ -97,14 +98,29 @@ VADD cities VALUES 1 121.5654 25.0330 "Taipei" SETATTR "{ \"population\": 277920
 When you run a similarity search (`VSIM`), you don’t have to search across *all* vectors. You can filter by attributes.
 For example:
 ```
-VSIM cities KNN 5 "industrial hub" FILTER population > 1000000
+> VSIM cities ELE Taipei WITHSCORES COUNT 5 FILTER '.population > 1000000'
+1) "Kaohsiung"
+2) "1"
+3) "Taipei"
+4) "0.9998820126056671"
+5) "New-Taipei"
+6) "0.9998786747455597"
+7) "Taoyuan"
+8) "0.9998691380023956"
+9) "Taichung"
+10) "0.9996747970581055"
 ```
 
-• This finds the 5 most similar vectors to “industrial hub,” but only among cities with population greater than 1,000,000.
+• This finds the 5 most similar vectors to “Taipei” but only among cities with population greater than 1,000,000.
 
 • **Verified by the expression**
-The filter expression (like `population > 1000000 AND area_m2 < 500000000`) is applied to the attributes. Only vectors that satisfy the expression are considered in the similarity search.
+The filter expression (like `.population > 1000000 AND .area_m2 < 500000000`) is applied to the attributes. Only vectors that satisfy the expression are considered in the similarity search.
 
+```
+> VSIM cities ELE Taipei WITHSCORES COUNT 5 FILTER '.population > 1000000 and .area_m2 < 500000000'
+1) "Taipei"
+2) "0.9998820126056671"
+```
 ---
 
 ##### **Vector set commands**
