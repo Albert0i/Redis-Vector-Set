@@ -199,6 +199,8 @@ VADD key [REDUCE dim] (FP32 | VALUES num) vector element
      [SETATTR attributes] 
      [M numlinks]
 ```
+> Add a new element into the vector set specified by key. The vector can be provided as 32-bit floating point (FP32) blob of values, or as floating point numbers as strings, prefixed by the number of elements.
+
 
 #### III. [VSIM](https://redis.io/docs/latest/commands/vsim/)
 ```
@@ -212,6 +214,8 @@ VSIM key (ELE | FP32 | VALUES num) (vector | element)
      [FILTER-EF max-filtering-effort]     
      [TRUTH] [NOTHREAD]
 ```
+> Return elements similar to a given vector or element. Use this command to perform approximate or exact similarity searches within a vector set.
+
 
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
 [Docs](./VSETS-README.md)
