@@ -77,10 +77,10 @@ Consider a scenario where you want to store and retrieve vector embeddings for v
 ---
 **Supplement**
 
-• **Each element of the vector set**
+• **Each element of the vector set**:
 Every vector you add (e.g., an embedding for “Taipei”) isn’t just numbers — you can also attach extra information (population, area, description, etc.).
 
-• **Associated with a set of attributes**
+• **Associated with a set of attributes**:
 These extra fields are stored as a **JSON blob**. For example:
 ```
 VADD cities VALUES 1 121.5654 25.0330 "Taipei" SETATTR "{ \"population\": 2779200, \"area_m2\": 271800000, \"description\": \"Capital city\" }"
