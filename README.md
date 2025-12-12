@@ -218,6 +218,8 @@ VSIM key (ELE | FP32 | VALUES num) (vector | element)
 
 
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
+![alt vector set](img/vector-set-browser-1.JPG)
+
 [Docs](./VSETS-README.md)
 
 
