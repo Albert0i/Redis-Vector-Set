@@ -18,6 +18,14 @@ console.log(res4);  // >>> true
 const res5 = await redis.vAdd("points", [1.0, 0], "pt:E");
 console.log(res5);  // >>> true
 
+const res5x = await redis.vAdd("points", [1.0, 0.5], "pt:X", {
+  SETATTR: {
+    name: "Point X",
+    description: "point X added"
+  }
+});
+console.log(res5x);  // >>> true
+
 const res6 = await redis.type("points");
 console.log(res6);  // >>> vectorset
 
