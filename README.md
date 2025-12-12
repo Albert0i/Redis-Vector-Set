@@ -169,7 +169,7 @@ VINFO myset
 
 Redis now offers two complementary search capabilities—the Redis Query Engine for comprehensive, enterprise-grade search & querying, and the new vector set as a native data-type that is lightweight and specialized vector similarity search.
 
-Redis Query Engine excels at fast full-text, numerical, vector, and hybrid queries over large scalable datasets, while vector sets provide a streamlined alternative with a simple API. Together, they reinforce Redis’s commitment to performance, flexibility, and developer-friendly search solutions.
+Redis Query Engine excels at fast full-text, numerical, vector, and hybrid queries over large scalable datasets, *while vector sets provide a streamlined alternative with a simple API*. Together, they reinforce Redis’s commitment to performance, flexibility, and developer-friendly search solutions.
 
 Vector sets may be a great choice when your application **primarily focuses on vector similarity use-cases** without the need for advanced search and querying, particularly those involving full-text, or hybrid queries. If you’re building **AI-driven applications** and want a **lightweight, efficient** way to store and query high-dimensional embeddings, vector sets can offer a **simple, streamlined** alternative.
 
