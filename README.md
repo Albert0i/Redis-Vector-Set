@@ -224,6 +224,60 @@ VSIM key (ELE | FP32 | VALUES num) (vector | element)
 [Docs](./VSETS-README.md)
 
 
+```
+node src/sample.js
+Redis client connected
+Redis client is ready to use
+true
+true
+true
+true
+true
+true
+vectorset
+6
+2
+[ 0.9999999403953552, 0.9999999403953552 ]
+[ -0.9999999403953552, -0.9999999403953552 ]
+[ -0.9999999403953552, 0.9999999403953552 ]
+[ 0.9999999403953552, -0.9999999403953552 ]
+[ 1, 0 ]
+true
+{ name: 'Point A', description: 'First point added' }
+true
+null
+true
+7
+true
+6
+[ 'pt:E', 'pt:X', 'pt:A', 'pt:D', 'pt:C', 'pt:B' ]
+{
+  'pt:A': 1,
+  'pt:X': 0.9730966687202454,
+  'pt:E': 0.8535534143447876,
+  'pt:D': 0.5
+}
+true
+true
+true
+true
+true
+[ 'pt:A', 'pt:C', 'pt:B' ]
+[ 'pt:C', 'pt:B' ]
+true
+Q8: 1.2643694877624512,1.958230972290039
+true
+NOQUANT: 1.262184977531433,1.958230972290039
+true
+BIN: 1,1
+true
+300
+true
+100
+Redis connection closed
+```
+
+
 #### V. Biblipgraphy 
 1. [A First Look at Vector Sets](https://medium.com/the-guy-wire/a-first-look-at-vector-sets-dd91cb59123e)
 2. [Getting started with vector sets](https://redis.io/learn/howtos/vector-sets-basics)
