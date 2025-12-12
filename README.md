@@ -161,7 +161,21 @@ Finally, we will also be adding support to various Redis client libraries starti
 We are immensely excited to see what the developer community will build using vector sets. We look forward to your feedback and innovations, as we continue to evolve Redis to meet the ever-changing needs of the tech landscape. We also encourage you to share your feedback through our GitHub issues or community forums. Have a fun time building.
 
 
-#### II. [Docs](./VSETS-README.md) from Vector Set Browser 
+#### II. [VADD](https://redis.io/docs/latest/commands/vadd/)
+```
+VADD key [REDUCE dim] (FP32 | VALUES num) vector element [CAS] [NOQUANT | Q8 | BIN]
+  [EF build-exploration-factor] [SETATTR attributes] [M numlinks]
+```
+
+#### III. [VSIM](https://redis.io/docs/latest/commands/vsim/)
+```
+VSIM key (ELE | FP32 | VALUES num) (vector | element) [WITHSCORES] [WITHATTRIBS] [COUNT num]
+  [EPSILON delta] [EF search-exploration-factor] [FILTER expression] [FILTER-EF max-filtering-effort]
+  [TRUTH] [NOTHREAD]
+```
+
+#### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
+[Docs](./VSETS-README.md)
 
 
 #### V. Biblipgraphy 
