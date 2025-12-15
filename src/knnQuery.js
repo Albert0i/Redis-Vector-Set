@@ -1,4 +1,4 @@
-import { redisClient, disconnect } from "./redis/redisClient.js"
+import { redis } from "./redis/redis.js"
 import { generateSentenceEmbeddings } from "./text-vector-gen.js"
 
 const float32Buffer = (arr) => {
@@ -22,20 +22,28 @@ const queryQuoteEmbeddingsByKNN = async (
       _resultCount,
     ) => {
     console.log(`queryQuotesEmbeddingsByKNN started`);
+    await redis.connect();
     let results = {};
     if (_searchTxt) {
       _resultCount = _resultCount ?? 5;
       const searchTxtVectorArr = await generateSentenceEmbeddings(_searchTxt);
-      const searchQuery = `(*)=>[KNN ${_resultCount} @embeddings $searchBlob AS score]`;
+      //const searchQuery = `(*)=>[KNN ${_resultCount} @embeddings $searchBlob AS score]`;
   
-      results = await redisClient.call('FT.SEARCH', 
-                                       'idx:quotes', 
-                                       searchQuery, 
-                                       'RETURN', 4, 'score', 'author', 'quote', 'source', 
-                                       'SORTBY', 'score', 'ASC', 
-                                       'PARAMS', 2, 'searchBlob', 
-                                                    float32Buffer(searchTxtVectorArr), 
-                                       'DIALECT', 2);
+      // results = await redisClient.call('FT.SEARCH', 
+      //                                  'idx:quotes', 
+      //                                  searchQuery, 
+      //                                  'RETURN', 4, 'score', 'author', 'quote', 'source', 
+      //                                  'SORTBY', 'score', 'ASC', 
+      //                                  'PARAMS', 2, 'searchBlob', 
+      //                                               float32Buffer(searchTxtVectorArr), 
+      //                                  'DIALECT', 2);
+      // results = await redis.vSim('quotes', searchTxtVectorArr, { 
+      //   COUNT: _resultCount, 
+      //   FILTER: '.author == "George Orwell"'
+      // })
+      results = await redis.sendCommand([
+        'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString(), 'FILTER', '.author == "George Orwell"'
+      ])
     } else {
       throw 'Search text cannot be empty';
     }
@@ -45,11 +53,16 @@ const queryQuoteEmbeddingsByKNN = async (
 
 async function main() {
   const results = await queryQuoteEmbeddingsByKNN('dream love death')
-  console.log(results)
-  await disconnect()
+  console.log(results)  
+  await redis.close()
 }
 
 main()
+/*
+   VSIM quotes ELE quote:241 WITHSCORES WITHATTRIBS COUNT 5
+
+   VSIM quotes ELE quote:241 WITHSCORES WITHATTRIBS COUNT 5 FILTER ".author == 'George Orwell'"   
+*/
 /*
    FT.SEARCH
    https://redis.io/docs/latest/commands/ft.search/

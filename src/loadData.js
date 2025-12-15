@@ -46,3 +46,8 @@ FT.SEARCH idx:bikes_vss "(*)=>[KNN 3 @embeddings $query_vector]" PARAMS 2 "query
 FT.SEARCH idx:quotes "(*)=>[KNN 3 @field $embeddings]" PARAMS 2 embeddings "binary_data" DIALECT 2
 
 */
+/*
+   VSIM quotes ELE quote:241 WITHSCORES WITHATTRIBS COUNT 5
+
+   VSIM quotes ELE quote:241 WITHSCORES WITHATTRIBS COUNT 5 FILTER ".author == 'George Orwell'"   
+*/
