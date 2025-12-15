@@ -507,7 +507,7 @@ Redis connection closed
       _resultCount = _resultCount ?? 5;
       const searchTxtVectorArr = await generateSentenceEmbeddings(_searchTxt); 
       results = await redis.sendCommand([
-        'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString(), 'FILTER', '.author == "George Orwell"'
+        'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString() 
       ])
 ```
 
