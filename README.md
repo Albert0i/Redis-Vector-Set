@@ -3,7 +3,7 @@
 ![alt vector-radial](img/vector-radial.png)
 
 
-#### CAVEAT
+#### Prologue 
 Vector Set is a new feature introduced in Redis 8.0. Be sure to check the availability before jumping into it. 
 
 ```
@@ -21,6 +21,7 @@ module:name=vectorset,ver=1,api=1,filters=0,usedby=[],using=[],options=[handle-i
    7) "args"
    8) (empty list or set)
 ```
+
 
 #### I. [Announcing vector sets, a new Redis data type for vector similarity](https://redis.io/blog/announcing-vector-sets-a-new-redis-data-type-for-vector-similarity/) (TL;DR)
 
@@ -369,6 +370,9 @@ Redis connection closed
 3. [Redis vector sets](https://redis.io/docs/latest/develop/data-types/vector-sets/)
 4. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
 5. [Redis 8.4.0 for Windows](https://github.com/redis-windows/redis-windows/releases)
+
+
+#### Epilogue 
 
 
 ### EOF (2026/01/01)
