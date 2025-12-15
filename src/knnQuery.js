@@ -37,7 +37,7 @@ const queryQuoteEmbeddingsByKNN = async (
       //                                  'PARAMS', 2, 'searchBlob', 
       //                                               float32Buffer(searchTxtVectorArr), 
       //                                  'DIALECT', 2);
-      // results = await redis.vSim('quotes', searchTxtVectorArr, { 
+      // results = await redis.vSimWithScores('quotes', searchTxtVectorArr, { 
       //   COUNT: _resultCount, 
       //   FILTER: '.author == "George Orwell"'
       // })
@@ -48,13 +48,14 @@ const queryQuoteEmbeddingsByKNN = async (
       throw 'Search text cannot be empty';
     }
   
+    await redis.close()
     return results;
   };
 
 async function main() {
   const results = await queryQuoteEmbeddingsByKNN('dream love death')
   console.log(results)  
-  await redis.close()
+  //await redis.close()
 }
 
 main()

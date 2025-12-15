@@ -249,6 +249,32 @@ So, the additional amount of memory is approximately 0.33 × 64 × 8 ≈ 169.6 b
 
 If you don't have a recall quality problem, the default is acceptable, and uses a minimal amount of memory.
 
+`loadData.js`
+```
+import { redis } from "./redis/redis.js"
+import { generateSentenceEmbeddings } from "./text-vector-gen.js"
+import { quotes } from './quotes.js'
+
+async function main() {
+  console.log('number of quotes is', quotes.length)
+  process.stdout.write('Loading')
+  await redis.connect();
+  for (let i = 0; i < quotes.length; i++) { 
+    process.stdout.write(".");
+    
+    const embeddings = await generateSentenceEmbeddings(quotes[i].quote);    
+    await redis.vAdd("quotes", embeddings, `quote:${i+1}`, {
+      SETATTR: quotes[i]
+    });
+  }
+  console.log('Done')
+  await redis.close()
+}
+
+main()
+```
+![alt loadData](img/load.JPG)
+
 
 #### III. [VSIM](https://redis.io/docs/latest/commands/vsim/)
 ```
@@ -301,6 +327,71 @@ forces an exact linear scan of all elements, bypassing the HNSW graph. Use for b
 **NOTHREAD**
 
 executes the search in the main thread instead of a background thread. Useful for small vector sets or benchmarks. This may block the server during execution.
+
+```
+VSIM quotes ELE quote:241 WITHSCORES WITHATTRIBS COUNT 5
+
+VSIM quotes ELE quote:241 WITHSCORES WITHATTRIBS COUNT 5 FILTER ".author == 'George Orwell'"   
+```
+
+`knnQuery.js`
+```
+import { redis } from "./redis/redis.js"
+import { generateSentenceEmbeddings } from "./text-vector-gen.js"
+
+const float32Buffer = (arr) => {
+    const floatArray = new Float32Array(arr);
+    const float32Buffer = Buffer.from(floatArray.buffer);
+    return float32Buffer;
+  };
+
+//A KNN query will give us the top n documents that best match the query vector.
+const queryQuoteEmbeddingsByKNN = async (
+      _searchTxt,
+      _resultCount,
+    ) => {
+    console.log(`queryQuotesEmbeddingsByKNN started`);
+    await redis.connect();
+    let results = {};
+    if (_searchTxt) {
+      _resultCount = _resultCount ?? 5;
+      const searchTxtVectorArr = await generateSentenceEmbeddings(_searchTxt);
+  
+      results = await redis.vSim('quotes', searchTxtVectorArr, { 
+        COUNT: _resultCount, 
+        FILTER: '.author == "George Orwell"'
+      })
+    } else {
+      throw 'Search text cannot be empty';
+    }
+  
+    await redis.close()
+    return results;
+  };
+
+async function main() {
+  const results = await queryQuoteEmbeddingsByKNN('dream love death')
+  console.log(results)    
+}
+
+main()
+```
+
+```
+     results = await redis.vSimWithScores('quotes', searchTxtVectorArr, { 
+               COUNT: _resultCount, 
+               FILTER: '.author == "George Orwell"'
+          })
+```
+![alt knn1](img/knn1.JPG)
+
+
+```
+      results = await redis.sendCommand([
+               'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString(), 'FILTER', '.author == "George Orwell"'
+          ])
+```
+![alt knn2](img/knn2.JPG)
 
 
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
