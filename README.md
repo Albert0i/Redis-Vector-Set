@@ -466,6 +466,63 @@ Redis connection closed
 
 
 #### Epilogue 
+"To learn from comparison." is my motto. Previously, I wrote a small article on [Redis Vector Search](https://github.com/Albert0i/RedisVectorSearch) to show how to use [Redis Query Engine](https://redis.io/docs/latest/develop/ai/search-and-query/) do do Vector Search. It is reasonable to reuse the code and data. 
+
+`loadData.js` with Redis Query Engine: 
+```
+    for (let i = 0; i < quotes.length; i++) { 
+        quotes[i].embeddings = await generateSentenceEmbeddings(quotes[i].quote);
+        await redisClient.call("JSON.SET", `quote:${i+1}`, "$", JSON.stringify(quotes[i]));
+      }
+```
+
+`loadData.js` with Redis Vector Set:
+```
+    for (let i = 0; i < quotes.length; i++) { 
+      const embeddings = await generateSentenceEmbeddings(quotes[i].quote);
+      await redis.vAdd("quotes", embeddings, `quote:${i+1}`, {
+        SETATTR: quotes[i]
+      });
+    }
+```
+
+`knnQuery.js` with Redis Query Engine: 
+```
+      _resultCount = _resultCount ?? 5;
+      const searchTxtVectorArr = await generateSentenceEmbeddings(_searchTxt);
+      const searchQuery = `(*)=>[KNN ${_resultCount} @embeddings $searchBlob AS score]`;
+  
+      results = await redisClient.call('FT.SEARCH', 
+                                       'idx:quotes', 
+                                       searchQuery, 
+                                       'RETURN', 4, 'score', 'author', 'quote', 'source', 
+                                       'SORTBY', 'score', 'ASC', 
+                                       'PARAMS', 2, 'searchBlob', 
+                                                    float32Buffer(searchTxtVectorArr), 
+                                       'DIALECT', 2);
+```
+
+`knnQuery.js` with Redis Vector Set: 
+```
+      _resultCount = _resultCount ?? 5;
+      const searchTxtVectorArr = await generateSentenceEmbeddings(_searchTxt); 
+      results = await redis.sendCommand([
+        'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString(), 'FILTER', '.author == "George Orwell"'
+      ])
+```
+
+To create index for Redis Query Engine: 
+```
+FT.CREATE idx:quotes ON JSON PREFIX 1 quote:
+  SCHEMA
+  $.author as author TEXT NOSTEM SORTABLE
+  $.quote as quote TEXT NOSTEM SORTABLE
+  $.source as source TEXT NOSTEM SORTABLE
+  $.embeddings as embeddings VECTOR FLAT 6
+          TYPE FLOAT32
+          DIM 768
+          DISTANCE_METRIC COSINE
+```
 
 
 ### EOF (2026/01/01)
