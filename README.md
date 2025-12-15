@@ -199,7 +199,54 @@ VADD key [REDUCE dim] (FP32 | VALUES num) vector element
      [SETATTR attributes] 
      [M numlinks]
 ```
-> Add a new element into the vector set specified by key. The vector can be provided as 32-bit floating point (FP32) blob of values, or as floating point numbers as strings, prefixed by the number of elements.
+Add a new element into the vector set specified by key. The vector can be provided as 32-bit floating point (FP32) blob of values, or as floating point numbers as strings, prefixed by the number of elements.
+
+**Optional arguments**
+
+**REDUCE dim**
+
+implements random projection to reduce the dimensionality of the vector. The projection matrix is saved and reloaded along with the vector set. Please note that the REDUCE option must be passed immediately before the vector. For example,
+```
+VADD mykey REDUCE 50 VALUES ...
+```
+
+**CAS**
+
+performs the operation partially using threads, in a check-and-set style. The neighbor candidates collection, which is slow, is performed in the background, while the command is executed in the main thread.
+
+**NOQUANT**
+
+in the first VADD call for a given key, NOQUANT forces the vector to be created without int8 quantization, which is otherwise the default.
+
+**BIN**
+
+forces the vector to use binary quantization instead of int8. This is much faster and uses less memory, but impacts the recall quality.
+
+**Q8**
+
+forces the vector to use signed 8-bit quantization. **This is the default**, and the option only exists to make sure to check at insertion time that the vector set is of the same format.
+
+> Note:
+NOQUANT, Q8, and BIN are mutually exclusive.
+
+**EF build-exploration-factor**
+
+plays a role in the effort made to find good candidates when connecting the new node to the existing Hierarchical Navigable Small World (HNSW) graph. **The default is 200.** Using a larger value may help in achieving a better recall. To improve the recall it is also possible to increase EF during VSIM searches.
+
+**SETATTR attributes**
+
+associates attributes in the form of a JavaScript object to the newly created entry or updates the attributes (if they already exist). It is the same as calling the VSETATTR command separately.
+
+**M numlinks**
+
+is the maximum number of connections that each node of the graph will have with other nodes. The default is 16. More connections means more memory, but provides for more efficient graph exploration. Nodes at layer zero (every node exists at least at layer zero) have M * 2 connections, while the other layers only have M connections. For example, setting M to 64 will use at least 1024 bytes of memory for layer zero. That's M * 2 connections times 8 bytes (pointers), or 128 * 8 = 1024. For higher layers, consider the following:
+
+- Each node appears in ~1.33 layers on average (empirical observation from HNSW papers), which works out to be 0.33 higher layers per node.
+- Each of those higher layers has M = 64 connections.
+
+So, the additional amount of memory is approximately 0.33 × 64 × 8 ≈ 169.6 bytes per node, bringing the total memory to ~1193 bytes.
+
+If you don't have a recall quality problem, the default is acceptable, and uses a minimal amount of memory.
 
 
 #### III. [VSIM](https://redis.io/docs/latest/commands/vsim/)
@@ -214,7 +261,45 @@ VSIM key (ELE | FP32 | VALUES num) (vector | element)
      [FILTER-EF max-filtering-effort]     
      [TRUTH] [NOTHREAD]
 ```
-> Return elements similar to a given vector or element. Use this command to perform approximate or exact similarity searches within a vector set.
+Return elements similar to a given vector or element. Use this command to perform approximate or exact similarity searches within a vector set.
+
+**Optional arguments** 
+
+**WITHSCORES**
+
+returns the similarity score (from 1 to 0) alongside each result. A score of 1 is identical; 0 is the opposite.
+
+**WITHATTRIBS**
+
+returns, for each element, the JSON attribute associated with the element or NULL when no attributes are present.
+
+**COUNT num**
+
+limits the number of returned results to num.
+
+**EPSILON delta**
+
+is a floating point number between 0 and 1. It is used to retrieve elements that have a distance that is no further than the specified delta. In vector sets, returned elements have a similarity score (when compared to the query vector) that is between 1 and 0, where 1 means identical and 0 means opposite vectors. For example, if the EPSILON option is specified with an argument of 0.2, it means only elements that have a similarity of 0.8 or better (a distance < 0.2) are returned. This is useful when you specify a large COUNT, but you don't want elements that are too far away from the query vector.
+
+**EF search-exploration-factor**
+
+controls the search effort. Higher values explore more nodes, improving recall at the cost of speed. Typical values range from 50 to 1000.
+
+**FILTER expression**
+
+applies a filter expression to restrict matching elements. See the filtered search section for syntax details.
+
+**FILTER-EF max-filtering-effort**
+
+limits the number of filtering attempts for the FILTER expression. See the filtered search section for more.
+
+**TRUTH**
+
+forces an exact linear scan of all elements, bypassing the HNSW graph. Use for benchmarking or to calculate recall. This is significantly slower (O(N)).
+
+**NOTHREAD**
+
+executes the search in the main thread instead of a background thread. Useful for small vector sets or benchmarks. This may block the server during execution.
 
 
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
