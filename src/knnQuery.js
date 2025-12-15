@@ -23,6 +23,7 @@ const queryQuoteEmbeddingsByKNN = async (
     ) => {
     console.log(`queryQuotesEmbeddingsByKNN started`);
     await redis.connect();
+    await redis.hello(3)
     let results = {};
     if (_searchTxt) {
       _resultCount = _resultCount ?? 5;
