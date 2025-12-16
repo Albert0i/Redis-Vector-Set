@@ -379,6 +379,7 @@ async function main() {
 main()
 ```
 
+![alt knn1](img/knn1.JPG)
 To return with scores like so: 
 ```
   results = await redis.vSimWithScores('quotes', searchTxtVectorArr, { 
@@ -386,7 +387,6 @@ To return with scores like so:
             FILTER: '.author == "George Orwell"'
       })
 ```
-![alt knn1](img/knn1.JPG)
 
 To perform more complicated search: 
 ```
