@@ -529,7 +529,7 @@ FT.CREATE idx:quotes ON JSON PREFIX 1 quote:
 ```
 
 **Comparison Table**
-| Feature                  | Redis Query Engine                        | Redis Vector Sets (Redis 8)         |
+| Feature  | Redis Query Engine | Redis Vector Sets (Redis 8)  |
 |---------------------------|-------------------------------------------|-------------------------------------|
 | **Status**               | Stable, production‑ready                  | Beta, experimental                  |
 | **Indexing**             | Schema‑based, supports FLAT/HNSW/SVS      | Native set abstraction, no schema   |
