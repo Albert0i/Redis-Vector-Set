@@ -381,18 +381,18 @@ main()
 
 To return with scores like so: 
 ```
-     results = await redis.vSimWithScores('quotes', searchTxtVectorArr, { 
-               COUNT: _resultCount, 
-               FILTER: '.author == "George Orwell"'
-          })
+    results = await redis.vSimWithScores('quotes', searchTxtVectorArr, { 
+              COUNT: _resultCount, 
+              FILTER: '.author == "George Orwell"'
+        })
 ```
 ![alt knn1](img/knn1.JPG)
 
 To perform more complicated search: 
 ```
-      results = await redis.sendCommand([
-               'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString(), 'FILTER', '.author == "George Orwell"'
-          ])
+    results = await redis.sendCommand([
+              'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString(), 'FILTER', '.author == "George Orwell"'
+        ])
 ```
 ![alt knn2](img/knn2.JPG)
 ![alt knn3](img/knn3.JPG)
