@@ -37,7 +37,7 @@ Consider a scenario where you want to store and retrieve vector embeddings for v
 
 - **Quantization**: In a vector set, the vectors are quantized by default to 8 bit values. However, this can be modified to no quantization or binary quantization when adding the first element. 	 
 ---
-**Supplement**
+**Supplementary**
 
 **Vectors in Redis Vector Sets** are usually arrays of floating‑point numbers (e.g., embeddings from text or images).
 
@@ -55,7 +55,7 @@ Consider a scenario where you want to store and retrieve vector embeddings for v
 
 - **Dimensionality Reduction**: The number of dimensions in a vector can be reduced by random projection by specifying the option and the number of dimensions.
 ---
-**Supplement**
+**Supplementary**
 
 • **Dimensionality**: A vector is just a list of numbers. For example, a text embedding might have 768 dimensions (768 numbers). The more dimensions, the more detail it can capture — but also the more memory and computation it requires.
 
@@ -77,7 +77,7 @@ Consider a scenario where you want to store and retrieve vector embeddings for v
 
 - **Filtering**: Each element of the vector set can be associated with a set of attributes specified as a JSON blob via the `VADD` or `VSETATTR` command. This allows the ability to filter for a subset of elements using `VSIM` that are verified by the expression.
 ---
-**Supplement**
+**Supplementary**
 
 • **Each element of the vector set**:
 Every vector you add (e.g., an embedding for “Taipei”) isn’t just numbers — you can also attach extra information (population, area, description, etc.).
