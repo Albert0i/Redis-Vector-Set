@@ -1,4 +1,5 @@
 ### Preliminary study on [Redis Vector Set](https://redis.io/docs/latest/develop/data-types/vector-sets/)
+> I was born in a time when the majority of young people had lost faith in God, for the same reason their elders had had it – without knowing why. And since the human spirit naturally tends to make judgements based on feeling instead of reason, most of these young people chose Humanity to replace God. <br/>--- The Book of Disquiet by Fernando Pessoa
 
 ![alt vector-radial](img/vector-radial.png)
 
