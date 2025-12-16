@@ -470,7 +470,7 @@ Redis connection closed
 
 
 #### Epilogue 
-"To learn from comparison." is my motto. Previously, I wrote a small article on [Redis Vector Search](https://github.com/Albert0i/RedisVectorSearch) to show how to use [Redis Query Engine](https://redis.io/docs/latest/develop/ai/search-and-query/) do do Vector Search. It is reasonable to reuse the code and data. 
+"To learn from comparison." is my motto. Previously, I wrote a small article on [Redis Vector Search](https://github.com/Albert0i/RedisVectorSearch) to show how to use [Redis Query Engine](https://redis.io/docs/latest/develop/ai/search-and-query/) do Vector Search. It is reasonable to reuse the code and data. 
 
 `loadData.js` with Redis Query Engine: 
 ```
@@ -515,7 +515,7 @@ Redis connection closed
       ])
 ```
 
-To create index for Redis Query Engine: 
+Don't forget to create index for Redis Query Engine: 
 ```
 FT.CREATE idx:quotes ON JSON PREFIX 1 quote:
   SCHEMA
