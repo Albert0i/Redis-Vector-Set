@@ -528,6 +528,7 @@ FT.CREATE idx:quotes ON JSON PREFIX 1 quote:
           DISTANCE_METRIC COSINE
 ```
 
+**Comparison Table**
 | Feature                  | Redis Query Engine                        | Redis Vector Sets (Redis 8)         |
 |---------------------------|-------------------------------------------|-------------------------------------|
 | **Status**               | Stable, production‑ready                  | Beta, experimental                  |
