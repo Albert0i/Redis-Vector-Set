@@ -528,5 +528,14 @@ FT.CREATE idx:quotes ON JSON PREFIX 1 quote:
           DISTANCE_METRIC COSINE
 ```
 
+| Feature                  | Redis Query Engine                        | Redis Vector Sets (Redis 8)         |
+|---------------------------|-------------------------------------------|-------------------------------------|
+| **Status**               | Stable, production‑ready                  | Beta, experimental                  |
+| **Indexing**             | Schema‑based, supports FLAT/HNSW/SVS      | Native set abstraction, no schema   |
+| **Filtering**             | Rich metadata filters (text, numeric, geo)| Limited / not primary focus         |
+| **Hybrid queries**        | Yes (vector + metadata)                   | Not yet                             |
+| **Ease of use**           | More setup, but powerful                  | Simpler, lightweight                |
+| **Best use case**         | Complex RAG, semantic search pipelines    | Quick similarity search, prototyping|
+
 
 ### EOF (2026/01/01)
