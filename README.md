@@ -379,6 +379,7 @@ async function main() {
 main()
 ```
 
+To return with scores like so: 
 ```
      results = await redis.vSimWithScores('quotes', searchTxtVectorArr, { 
                COUNT: _resultCount, 
@@ -387,7 +388,7 @@ main()
 ```
 ![alt knn1](img/knn1.JPG)
 
-
+To perform more complicated search: 
 ```
       results = await redis.sendCommand([
                'VSIM', 'quotes', 'FP32', float32Buffer(searchTxtVectorArr), 'WITHSCORES', 'WITHATTRIBS', 'COUNT', _resultCount.toString(), 'FILTER', '.author == "George Orwell"'
