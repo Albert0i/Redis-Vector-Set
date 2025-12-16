@@ -466,7 +466,8 @@ Redis connection closed
 4. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
 5. [Redis 8.4.0 for Windows](https://github.com/redis-windows/redis-windows/releases)
 6. [Introduction to vector sets: main commands and ideas](https://youtu.be/kVApsFUeuEA)
-7. [The Book of Disquiet by Fernando Pessoa](https://dn720004.ca.archive.org/0/items/english-collections-1/Book%20of%20Disquiet%2C%20The%20-%20Fernando%20Pessoa.pdf)
+7. [Insiemi vettoriali: l'implementazione e i bias di VRANDMEMBER](https://youtu.be/XregAstUets)
+9. [The Book of Disquiet by Fernando Pessoa](https://dn720004.ca.archive.org/0/items/english-collections-1/Book%20of%20Disquiet%2C%20The%20-%20Fernando%20Pessoa.pdf)
 
 
 #### Epilogue 
