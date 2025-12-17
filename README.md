@@ -463,6 +463,73 @@ Redis connection closed
 
 ![alt Add-Vector](img/Add-Vector.JPG)
 
+```
+> VDIM myset
+(integer) 1024
+
+> VCARD myset 
+(integer) 6
+
+> VRANDMEMBER myset 3
+1) "rabbit"
+2) "dog"
+3) "cat"
+
+> VRANGE myset - + 
+1) "apple"
+2) "banana"
+3) "cat"
+4) "dog"
+5) "orange"
+6) "rabbit"
+
+> VSIM myset ELE rabbit WITHSCORES
+1) "rabbit"
+2) "1"
+3) "dog"
+4) "0.8323670625686646"
+5) "cat"
+6) "0.818394809961319"
+7) "banana"
+8) "0.8101015985012054"
+9) "orange"
+10) "0.7664429843425751"
+11) "apple"
+12) "0.7247345447540283"
+
+> VINFO myset
+1) "quant-type"
+2) "int8"
+3) "hnsw-m"
+4) "16"
+5) "vector-dim"
+6) "1024"
+7) "projection-input-dim"
+8) "0"
+9) "size"
+10) "6"
+11) "max-level"
+12) "1"
+13) "attributes-count"
+14) "0"
+15) "vset-uid"
+16) "3"
+17) "hnsw-max-node-uid"
+18) "7"
+
+> VLINKS myset apple WITHSCORES
+1) 1) "banana"
+   2) "0.8396873474121094"
+   3) "orange"
+   4) "0.8346734046936035"
+   5) "cat"
+   6) "0.8273847103118896"
+   7) "dog"
+   8) "0.7663518190383911"
+   9) "rabbit"
+   10) "0.7248668074607849"
+```
+
 
 #### V. Biblipgraphy 
 1. [A First Look at Vector Sets](https://medium.com/the-guy-wire/a-first-look-at-vector-sets-dd91cb59123e)
