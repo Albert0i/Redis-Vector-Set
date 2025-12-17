@@ -541,6 +541,12 @@ Redis connection closed
 3) "0.016756342723965645"
 . . . 
 1024) "-0.005585447419434786"
+
+> VSETATTR myset cat "{\"type\": \"pet\", \"color\": \"white\"}" 
+(integer) 1
+
+> VGETATTR myset cat 
+"{\"type\": \"pet\", \"color\": \"white\"}"
 ```
 
 
