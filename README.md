@@ -400,11 +400,12 @@ To perform more complicated search:
 
 
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
+![alt npm run dev](img/npm-run-dev.JPG)
+
 ![alt vector set](img/vector-set-browser-1.JPG)
 > A modern web-based visualization and interaction tool for Redis Vector Sets. This application provides an intuitive interface for exploring and analyzing vector embeddings stored in Redis vector-sets.
 
 [Docs](./VSETS-README.md)
-
 
 ```
 node src/sample.js
