@@ -1,5 +1,6 @@
 ### Preliminary study on [Redis Vector Set](https://redis.io/docs/latest/develop/data-types/vector-sets/)
-> I was born in a time when the majority of young people had lost faith in God, for the same reason their elders had had it – without knowing why. And since the human spirit naturally tends to make judgements based on feeling instead of reason, most of these young people chose Humanity to replace God. <br/>--- The Book of Disquiet by Fernando Pessoa
+> "Nasci num tempo em que a maioria dos jovens tinham perdido a crença em Deus, pela mesma razão que os seus maiores a tinham tido — sem saber porquê. E então, porque o espírito humano tende naturalmente para criticar porque sente, e não porque pensa, a maioria desses jovens escolheu a Humanidade para sucedâneo de Deus."<br />
+"I was born in a time when the majority of young people had lost faith in God, for the same reason their elders had had it – without knowing why. And since the human spirit naturally tends to make judgements based on feeling instead of reason, most of these young people chose Humanity to replace God." <br/>--- The Book of Disquiet by Fernando Pessoa
 
 ![alt vector-radial](img/vector-radial.png)
 
