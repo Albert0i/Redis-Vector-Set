@@ -472,6 +472,11 @@ Redis connection closed
 > VCARD myset 
 (integer) 6
 
+#
+# specifies the number of elements to return. 
+# Positive values return distinct elements; 
+# negative values allow duplicates.
+#
 > VRANDMEMBER myset 3
 1) "rabbit"
 2) "dog"
@@ -548,6 +553,17 @@ Redis connection closed
 3) "0.016756342723965645"
 . . . 
 1024) "-0.005585447419434786"
+
+# 
+# To retrieve the raw internal representation, 
+# use the RAW option:
+# 
+> VEMB myset cat RAW
+1) "int8"
+2) "\xf9\b\t\xfa\xe7\xfe\x06\x0f\n\r\x1b\x0e\xf0\x00\xf5\x00\xfd\xed\xed\xfc\b\x1a\xcc\xfb\x06\"\a\x04\x19\x04\xfc\xef\x1e\xe4\xef\xf5\x0e\x02\x02\xf1\x0c\xe2\x14\xe8\xed\xf6\x03\xfc\x15\xe9\xfc\xf9\r\xf6\xf6\xef\xfe\n\x01\x12\x1a\xfc\x04\xe9\xf3\x0f\a\xf6\x05\xfb\xfe\x12\xe9\xfd\xe7\xf6\x05\x0c\xfc
+. . . 
+3) "1"
+4) "0.23645061254501343"
 
 > VSETATTR myset cat "{\"type\": \"pet\", \"color\": \"white\"}" 
 (integer) 1
