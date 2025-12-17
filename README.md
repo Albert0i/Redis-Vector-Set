@@ -548,6 +548,7 @@ Redis connection closed
 > VGETATTR myset cat 
 "{\"type\": \"pet\", \"color\": \"white\"}"
 ```
+![alt Edit-Attributes](img/Edit-Attributes.JPG)
 
 
 #### V. Biblipgraphy 
