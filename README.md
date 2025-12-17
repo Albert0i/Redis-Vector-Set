@@ -528,6 +528,12 @@ Redis connection closed
    8) "0.7663518190383911"
    9) "rabbit"
    10) "0.7248668074607849"
+
+> VISMEMBER myset ox
+(integer) 0
+
+> VISMEMBER myset cat
+(integer) 1
 ```
 
 
