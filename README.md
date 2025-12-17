@@ -458,6 +458,10 @@ true
 Redis connection closed
 ```
 
+![alt Embedding-Model-Configuration](img/Embedding-Model-Configuration.JPG)
+
+![alt Add-Vector](img/Add-Vector.JPG)
+
 
 #### V. Biblipgraphy 
 1. [A First Look at Vector Sets](https://medium.com/the-guy-wire/a-first-look-at-vector-sets-dd91cb59123e)
