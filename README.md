@@ -477,6 +477,11 @@ Redis connection closed
 2) "dog"
 3) "cat"
 
+#
+# The command returns elements in lexicographical order, 
+# using byte-by-byte comparison 
+# (like memcmp()) to establish a total order among elements.
+#
 > VRANGE myset - + 
 1) "apple"
 2) "banana"
