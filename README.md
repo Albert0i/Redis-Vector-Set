@@ -434,9 +434,11 @@ Select **Embedding Model** and click `Change` button:
 
 ![alt Vector Data](img/Vector-Data.JPG)
 
+Select **Text**, **Ollama**, **API URL**, choose the model used and click `Save`. You should now see the vector set in the main page. 
+
 ![alt Embedding-Model-Configuration](img/Embedding-Model-Configuration.JPG)
 
-Select **Text**, **Ollama**, **API URL**, choose the model used and click `Save`. You should now see the vector set in the main page. Click it and then proceed with `+ Add Vector` button. 
+Click it and then proceed with `+ Add Vector` button. 
 
 ![alt Add-Vector](img/Add-Vector.JPG)
 
