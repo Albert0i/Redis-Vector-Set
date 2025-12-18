@@ -570,7 +570,7 @@ Check and edit attributes in Vector Set Browser:
 
 ![alt Edit-Attributes](img/Edit-Attributes.JPG)
 
-You can add FILTER to search result: 
+You can apply FILTER to vector search: 
 
 ```
 > VSIM myset ELE cat WITHSCORES WITHATTRIBS FILTER ".type=='pet'"
