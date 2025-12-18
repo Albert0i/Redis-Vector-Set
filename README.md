@@ -422,7 +422,7 @@ When done, click to open:
 
 ![alt vector set browser main](img/vector-set-browser-main.JPG)
 
-Go ahead to click "+" to create a new vector set: 
+Go ahead to create a new vector set by clicking the "+" button: 
 
 ![alt Create Vector Set](img/Create-Vector-Set.JPG)
 
