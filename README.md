@@ -546,7 +546,18 @@ Now, open `REDIS-CLI` and type:
 3) "1"
 4) "0.23645061254501343"
 
+
 > VSETATTR myset cat "{\"type\": \"pet\", \"color\": \"white\"}" 
+(integer) 1
+> VSETATTR myset dog "{\"type\": \"pet\", \"color\": \"black\"}" 
+(integer) 1
+> VSETATTR myset rabbit "{\"type\": \"pet\", \"color\": \"gray\"}" 
+(integer) 1
+> VSETATTR myset apple "{\"type\": \"pet\", \"color\": \"red\"}" 
+(integer) 1
+> VSETATTR myset banana "{\"type\": \"pet\", \"color\": \"yellow\"}" 
+(integer) 1
+> VSETATTR myset orange "{\"type\": \"pet\", \"color\": \"orange\"}" 
 (integer) 1
 
 > VGETATTR myset cat 
