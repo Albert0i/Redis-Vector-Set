@@ -563,9 +563,14 @@ Now, open `REDIS-CLI` and type:
 > VGETATTR myset cat 
 "{\"type\": \"pet\", \"color\": \"white\"}"
 ```
+
+Check and edit attributes in Vector Set Browser: 
+
 ![alt myset](img/myset.JPG)
 
 ![alt Edit-Attributes](img/Edit-Attributes.JPG)
+
+You can add FILTER to search result: 
 
 ```
 > VSIM myset ELE cat WITHSCORES WITHATTRIBS FILTER ".type=='pet'"
