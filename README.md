@@ -553,11 +553,11 @@ Now, open `REDIS-CLI` and type:
 (integer) 1
 > VSETATTR myset rabbit "{\"type\": \"pet\", \"color\": \"gray\"}" 
 (integer) 1
-> VSETATTR myset apple "{\"type\": \"pet\", \"color\": \"red\"}" 
+> VSETATTR myset apple "{\"type\": \"fruit\", \"color\": \"red\"}" 
 (integer) 1
-> VSETATTR myset banana "{\"type\": \"pet\", \"color\": \"yellow\"}" 
+> VSETATTR myset banana "{\"type\": \"fruit\", \"color\": \"yellow\"}" 
 (integer) 1
-> VSETATTR myset orange "{\"type\": \"pet\", \"color\": \"orange\"}" 
+> VSETATTR myset orange "{\"type\": \"fruit\", \"color\": \"orange\"}" 
 (integer) 1
 
 > VGETATTR myset cat 
@@ -566,6 +566,19 @@ Now, open `REDIS-CLI` and type:
 ![alt myset](img/myset.JPG)
 
 ![alt Edit-Attributes](img/Edit-Attributes.JPG)
+
+```
+> VSIM myset ELE cat WITHSCORES WITHATTRIBS FILTER ".type=='pet'"
+1) "cat"
+2) "1"
+3) "{\"type\": \"pet\", \"color\": \"white\"}"
+4) "dog"
+5) "0.8457243144512177"
+6) "{\"type\": \"pet\", \"color\": \"black\"}"
+7) "rabbit"
+8) "0.8183082044124603"
+9) "{\"type\": \"pet\", \"color\": \"gray\"}"
+```
 
 
 #### V. Biblipgraphy 
