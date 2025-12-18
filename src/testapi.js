@@ -15,6 +15,17 @@ async function run() {
 run();
 
 /*
+   Ollama API Reference 
+   https://docs.ollama.com/api-reference/get-version
+
+   Ollama 
+   https://github.com/ollama/ollama
+
+   Ollama Javascript Library 
+   https://github.com/ollama/ollama-js
+*/
+
+/*
 ollama pull mxbai-embed-large
 
 curl http://localhost:11434/api/embeddings -d ^
