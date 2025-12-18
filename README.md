@@ -585,6 +585,8 @@ You can apply FILTER to vector search:
 9) "{\"type\": \"pet\", \"color\": \"gray\"}"
 ```
 
+Please check Vector Set Browser documention [here](VSETS-README.md) and how to setup [Ollama](https://ollama.com/) in Windows 11 [here](ollama.md). 
+
 
 #### V. Biblipgraphy 
 1. [A First Look at Vector Sets](https://medium.com/the-guy-wire/a-first-look-at-vector-sets-dd91cb59123e)
