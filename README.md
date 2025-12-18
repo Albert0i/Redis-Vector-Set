@@ -402,68 +402,47 @@ To perform more complicated search:
 #### IV. [Vector Sets Browser](https://github.com/redis/vector-sets-browser)
 > A modern web-based visualization and interaction tool for Redis Vector Sets. This application provides an intuitive interface for exploring and analyzing vector embeddings stored in Redis vector-sets.
 
+Let's spin up the program by running `npm run dev`: 
+
 ![alt npm run dev](img/npm-run-dev.JPG)
+
+Navigate to [http://localhost:3000/](http://localhost:3000/): 
+
+![alt dashboard](img/dashboard.JPG)
+
+Read the text carefully and click the `Get Started` button: 
 
 ![alt vector set](img/vector-set-browser-1.JPG)
 
-[Docs](./VSETS-README.md)
+Click the "+ Add Server" button to create connection to your Redis instance: 
 
-```
-node src/sample.js
-Redis client connected
-Redis client is ready to use
-true
-true
-true
-true
-true
-true
-vectorset
-6
-2
-[ 0.9999999403953552, 0.9999999403953552 ]
-[ -0.9999999403953552, -0.9999999403953552 ]
-[ -0.9999999403953552, 0.9999999403953552 ]
-[ 0.9999999403953552, -0.9999999403953552 ]
-[ 1, 0 ]
-true
-{ name: 'Point A', description: 'First point added' }
-true
-null
-true
-7
-true
-6
-[ 'pt:E', 'pt:X', 'pt:A', 'pt:D', 'pt:C', 'pt:B' ]
-{
-  'pt:A': 1,
-  'pt:X': 0.9730966687202454,
-  'pt:E': 0.8535534143447876,
-  'pt:D': 0.5
-}
-true
-true
-true
-true
-true
-[ 'pt:A', 'pt:C', 'pt:B' ]
-[ 'pt:C', 'pt:B' ]
-true
-Q8: 1.2643694877624512,1.958230972290039
-true
-NOQUANT: 1.262184977531433,1.958230972290039
-true
-BIN: 1,1
-true
-300
-true
-100
-Redis connection closed
-```
+![alt Add Redis Server](img/Add-Redis-Server.JPG)
+
+When done, click to open: 
+
+![alt vector set browser main](img/vector-set-browser-main.JPG)
+
+Go ahead to click "+" to create a new vector set: 
+
+![alt Create Vector Set](img/Create-Vector-Set.JPG)
+
+Type in **Vector Set Name**. 
+
+Click to configure **Embedding Model**: 
+
+Select **Embedding Model** and click `Change` button: 
+
+![alt Vector Data](img/Vector-Data.JPG)
 
 ![alt Embedding-Model-Configuration](img/Embedding-Model-Configuration.JPG)
 
+Select **Text**, **Ollama**, **API URL**, choose the model used and click `Save`. You should now see the vector set in the main page. Click it and then proceed with `+ Add Vector` button. 
+
 ![alt Add-Vector](img/Add-Vector.JPG)
+
+Type in apple, banana, orange, cat, dog, rabbit consecutively and individually in **Element ID** and **Vector Data**, select **Text** if necessary, and press `Add Vector` button. 
+
+Now, open `REDIS-CLI` and type: 
 
 ```
 > VDIM myset
