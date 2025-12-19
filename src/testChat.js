@@ -18,7 +18,7 @@ let messages = [
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
-  prompt: "Ask Ollama> "
+  prompt: "You > "
 });
 
 console.log("Type your question and press Enter. Press Ctrl-C to exit.");
@@ -36,7 +36,8 @@ rl.on("line", async (line) => {
 
   try {
     const result = await getChatMessage(messages);
-    console.log("Chat result:", result);
+    console.log("Ollama > ", result);
+    console.log()
 
     // Add assistant reply to history
     messages.push({ role: "assistant", content: result });
