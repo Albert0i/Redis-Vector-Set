@@ -29,7 +29,8 @@ export async function getEmbedding(prompt) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gemma3", 
+        model: "gemma3:12b", 
+        //model: "gemma3", 
         //model: "gemma:2b", // lightweight model
         messages,
         options: {
