@@ -34,7 +34,7 @@ export async function getEmbedding(prompt) {
         //model: "gemma:2b", // lightweight model
         messages,
         options: {
-          quantize: "Q4_K_M"   // or "q5_K_M", "q8_0" depending on your GPU
+          quantize: "Q8_0"   // or "q5_K_M", "q8_0" depending on your GPU
         }
       })
     });
