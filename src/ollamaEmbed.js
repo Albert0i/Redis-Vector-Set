@@ -31,7 +31,10 @@ export async function getEmbedding(prompt) {
       body: JSON.stringify({
         model: "gemma3", 
         //model: "gemma:2b", // lightweight model
-        messages
+        messages,
+        options: {
+          quantize: "Q4_K_M"   // or "q5_K_M", "q8_0" depending on your GPU
+        }
       })
     });
   
