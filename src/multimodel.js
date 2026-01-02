@@ -5,12 +5,16 @@ async function main() {
   const response = await ollama.generate({
     model: 'gemma3:latest',
     prompt: 'describe this image:',
-    images: [imagePath],
-    stream: true,
+    images: [ imagePath ],
+    stream: false,
   })
-  for await (const part of response) {
-    process.stdout.write(part.response)
-  }
+
+  // With stream true, 
+  //for await (const part of response) {
+  //   process.stdout.write(part.response)
+  //}
+  // With stream:false, response is a single object
+  console.log(response.response)
 }
 
 main().catch(console.error)
@@ -18,6 +22,7 @@ main().catch(console.error)
 /*
    Ollama-JS examples/multimodal
    https://github.com/ollama/ollama-js/tree/main/examples/multimodal
+
 
    Gemma3 Model library
    https://github.com/ollama/ollama?tab=readme-ov-file#libraries-1
