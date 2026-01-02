@@ -16,9 +16,16 @@ async function main() {
 main().catch(console.error)
 
 /*
-   multimodal
+   Ollama-JS examples/multimodal
    https://github.com/ollama/ollama-js/tree/main/examples/multimodal
 
-   Gemma3
+   Gemma3 Model library
    https://github.com/ollama/ollama?tab=readme-ov-file#libraries-1
+
+   Caveat: 
+   According to https://ollama.com/library/gemma3
+   gemma3:latest, gemma3:4b, gemma3:12b and gemma3:27b 
+   support Text/Image. 
+
+   gemma3:270m and gemma3:1b support Text only. 
 */
